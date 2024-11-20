@@ -15,13 +15,22 @@ android {
         versionName = "1.0"
     }
 
+    signingConfigs {
+        create("release") {
+            storeFile = file("D:\\Android12SignerGUI\\SignFiles\\NewPublic\\platform.jks")
+            keyAlias = "android"
+            keyPassword = "android"
+            storePassword = "android"
+        }
+    }
     buildTypes {
+        debug {
+            isMinifyEnabled = false
+            signingConfig = signingConfigs.getByName("release")
+        }
         release {
             isMinifyEnabled = false
-            proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
-            )
+            signingConfig = signingConfigs.getByName("release")
         }
     }
     compileOptions {
@@ -34,7 +43,7 @@ android {
 }
 
 dependencies {
-
+    compileOnly(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
