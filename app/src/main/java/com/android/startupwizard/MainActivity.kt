@@ -58,14 +58,14 @@ class MainActivity : AppCompatActivity() {
     private fun showLanguagePicker(activity: Activity) {
         val adapter = constructLocaleAdapter(activity)
         AlertDialog.Builder(activity)
-            .setTitle("选择您的语言")
+            .setTitle(getString(R.string.chooseLanguageTitle))
             .setAdapter(adapter) { _, which ->
                 updateLocale(adapter.getItem(which)!!.locale)
                 currentLanguage = LocalePicker.getLocales()[0].toLanguageTag()
                 chooseLanguage?.text = getDisplayName(currentLanguage)
                 sp?.edit()?.putString("language", currentLanguage)?.apply()
             }
-            .setNegativeButton("取消") { dialog, _ -> dialog.dismiss() }
+            .setNegativeButton(getString(R.string.cancel)) { dialog, _ -> dialog.dismiss() }
             .create().show()
     }
 }

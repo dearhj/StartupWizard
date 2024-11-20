@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name" translatable="false">StartupWizard</string>
+    <string name="welcome">こんにちは</string>
+    <string name="startButton">スタート</string>
+    <string name="chooseLanguageTitle">言語の選択</string>
+    <string name="cancel">キャンセル</string>
+</resources>

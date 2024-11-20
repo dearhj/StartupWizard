@@ -1,3 +1,7 @@
 <resources>
-    <string name="app_name">StartupWizard</string>
+    <string name="app_name" translatable="false">StartupWizard</string>
+    <string name="welcome">Hi there</string>
+    <string name="startButton">Start</string>
+    <string name="chooseLanguageTitle">Choose your language</string>
+    <string name="cancel">Cancel</string>
 </resources>
