@@ -49,7 +49,6 @@ class MainActivity : AppCompatActivity() {
                 adapter.remove(localeInfo)
                 break
             }
-            println("${item?.locale?.toLanguageTag()} -> \"${item?.locale?.displayName}\"")
         }
         if (localeInfo != null) adapter.insert(localeInfo, 0)
         return adapter
