@@ -3,6 +3,7 @@ package com.android.startupwizard
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.app.AlertDialog
+import android.content.Intent
 import android.os.Bundle
 import android.widget.ArrayAdapter
 import android.widget.Button
@@ -28,8 +29,11 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         language = findViewById(R.id.language)
         chooseLanguage = findViewById(R.id.choose_language)
+        startButton = findViewById(R.id.start)
         language?.setOnClickListener { showLanguagePicker(this) }
-        startButton?.setOnClickListener {}
+        startButton?.setOnClickListener {
+            startActivity(Intent(this, WifiActivity::class.java))
+        }
     }
 
     override fun onResume() {
