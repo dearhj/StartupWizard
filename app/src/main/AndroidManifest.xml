@@ -7,16 +7,7 @@
         android:name="android.permission.CHANGE_CONFIGURATION"
         tools:ignore="ProtectedPermissions" />
     <uses-permission
-        android:name="android.permission.MANAGE_USER_OEM_UNLOCK_STATE"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
         android:name="android.permission.READ_PRIVILEGED_PHONE_STATE"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.READ_OEM_UNLOCK_STATE"
-        tools:ignore="ProtectedPermissions" />
-    <uses-permission
-        android:name="android.permission.REBOOT"
         tools:ignore="ProtectedPermissions" />
     <uses-permission
         android:name="android.permission.SET_TIME"
@@ -34,6 +25,11 @@
         android:name="android.permission.WRITE_SETTINGS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="com.stevesoltys.seedvault.RESTORE_BACKUP" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".App"
@@ -47,6 +43,12 @@
         android:theme="@style/Theme.StartupWizard"
         tools:targetApi="31">
         <activity
+            android:name=".adapter.WaitActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TimeActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
@@ -58,14 +60,16 @@
         <activity
             android:name=".WifiActivity"
             android:exported="false"
-            android:windowSoftInputMode="adjustNothing"
-            android:immersive="true">
+            android:immersive="true"
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="com.android.setupwizard.WIFI_SETTINGS" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter android:priority="5">
                 <action android:name="android.net.wifi.PICK_WIFI_NETWORK" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>

@@ -1,0 +1,10 @@
+<!-- res/drawable/circle_shape.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:innerRadius="100dp"
+    android:shape="ring"
+    android:thickness="12dp"
+    android:useLevel="false">
+    <gradient
+        android:endColor="#0464B3"
+        android:type="sweep" />
+</shape>
