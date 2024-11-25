@@ -14,15 +14,18 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.MainScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 
 
 class WaitActivity : AppCompatActivity() {
+    private var pingOutTimeFlag = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
         setContentView(R.layout.activity_wait)
+        pingOutTimeFlag = false
     }
 
     val handler = Handler(Looper.getMainLooper())
@@ -31,6 +34,7 @@ class WaitActivity : AppCompatActivity() {
         toast(this@WaitActivity, this@WaitActivity.getString(R.string.fail_connect_wifi))
     }
     val runnableNext = Runnable { startActivity(Intent(this, TimeActivity::class.java)) }
+    val runnablePingOutTime = Runnable { pingOutTimeFlag = true }
 
 
     override fun onResume() {
@@ -60,6 +64,11 @@ class WaitActivity : AppCompatActivity() {
                 } else if (NetworkInfo.State.CONNECTED == info.state) {
                     handler.removeCallbacks(runnableBack)
                     MainScope().launch(Dispatchers.IO) {
+                        handler.postDelayed(runnablePingOutTime, 5000)
+                        while (!canPing() && !pingOutTimeFlag) {
+                            delay(200)
+                        }
+                        handler.removeCallbacks(runnablePingOutTime)
                         val status = canPing()
                         withContext(Dispatchers.Main) {
                             handler.postDelayed(if (status) runnableNext else runnableBack, 1500)
