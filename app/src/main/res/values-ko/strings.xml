@@ -12,8 +12,14 @@
     <string name="choose_wifi">네트워크 선택</string>
     <string name="back">반환</string>
     <string name="skip">건너뛰기</string>
+    <string name="next">다음 단계</string>
+    <string name="set_finish">완료</string>
     <string name="wait">잠시만요</string>
     <string name="password">암호</string>
     <string name="sure">확인</string>
     <string name="show_password">비밀번호 표시</string>
+    <string name="data">날짜</string>
+    <string name="time">시간</string>
+    <string name="data_time">날짜 및 시간</string>
+    <string name="data_time_set">필요에 따라 조정 가능</string>
 </resources>

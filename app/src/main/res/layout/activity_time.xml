@@ -37,14 +37,14 @@
             android:gravity="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="日期和时间"
+            android:text="@string/data_time"
             android:textSize="28sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="可根据需要进行调整"
+            android:text="@string/data_time_set"
             android:textSize="20sp" />
 
         <View
@@ -86,7 +86,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="GMT+08:00"
-                        android:textColor="@color/gray" />
+                        android:textColor="@color/gray"
+                        tools:ignore="HardcodedText" />
 
                     <TextView
                         android:id="@+id/timezone"
@@ -94,7 +95,8 @@
                         android:layout_height="wrap_content"
                         android:text="中国标准时间"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <ImageView
@@ -133,16 +135,17 @@
                         android:id="@+id/data_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="日期"
+                        android:text="@string/data"
                         android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/date"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="2024年6月2日周日"
+                        android:text="2024年11月25日"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <ImageView
@@ -180,16 +183,17 @@
                         android:id="@+id/time_title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="时间"
+                        android:text="@string/time"
                         android:textColor="@color/gray" />
 
                     <TextView
                         android:id="@+id/time"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="13:48"
+                        android:text="19:27"
                         android:textColor="@color/black"
-                        android:textSize="20sp" />
+                        android:textSize="20sp"
+                        tools:ignore="HardcodedText" />
                 </LinearLayout>
 
                 <ImageView
@@ -260,7 +264,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.3"
             android:visibility="invisible" />
     </LinearLayout>
 </FrameLayout>

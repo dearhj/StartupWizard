@@ -12,8 +12,14 @@
     <string name="choose_wifi">ネットワークの選択</string>
     <string name="back">リターンマッチ</string>
     <string name="skip">スキップ</string>
+    <string name="next">次のステップ</string>
+    <string name="set_finish">完了</string>
     <string name="wait">少々お待ちください</string>
     <string name="password">パスワード</string>
     <string name="sure">を選択して、</string>
     <string name="show_password">パスワードを表示</string>
+    <string name="data">日付</string>
+    <string name="time">時間</string>
+    <string name="data_time">日付と時刻</string>
+    <string name="data_time_set">必要に応じて調整可能</string>
 </resources>

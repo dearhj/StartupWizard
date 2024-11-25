@@ -12,8 +12,14 @@
     <string name="choose_wifi">选择网络</string>
     <string name="back">返回</string>
     <string name="skip">跳过</string>
+    <string name="next">下一步</string>
+    <string name="set_finish">完成</string>
     <string name="wait">请稍等</string>
     <string name="password">密码</string>
     <string name="sure">确定</string>
     <string name="show_password">显示密码</string>
+    <string name="data">日期</string>
+    <string name="time">时间</string>
+    <string name="data_time">日期和时间</string>
+    <string name="data_time_set">可根据需要进行调整</string>
 </resources>

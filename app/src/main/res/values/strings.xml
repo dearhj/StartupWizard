@@ -12,8 +12,14 @@
     <string name="choose_wifi">Select Network</string>
     <string name="back">Back</string>
     <string name="skip">Skip</string>
+    <string name="next">Next</string>
+    <string name="set_finish">Finish</string>
     <string name="wait">Please wait</string>
     <string name="password">Password</string>
     <string name="sure">Sure</string>
     <string name="show_password">Show Password</string>
+    <string name="data">Date</string>
+    <string name="time">Time</string>
+    <string name="data_time">Date and Time</string>
+    <string name="data_time_set">Adjust if needed</string>
 </resources>
