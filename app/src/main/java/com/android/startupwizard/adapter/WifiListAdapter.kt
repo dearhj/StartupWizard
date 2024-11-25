@@ -12,6 +12,7 @@ import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import com.android.startupwizard.R
+import com.android.startupwizard.WaitActivity
 import com.android.startupwizard.connectWifi
 import com.android.startupwizard.toast
 import com.chad.library.adapter.base.BaseQuickAdapter
@@ -46,13 +47,15 @@ class WifiListAdapter(private val mWifiManager: WifiManager?) :
         }
         wifiName.text = item.first
         wifiInfo.setOnClickListener {
-            if (item.second != "NO_PASSWORD") showPasswordDialog(context, item.first) {
-                val password = it.findViewById<EditText>(R.id.password).text.toString()
-                connectWifi(mWifiManager, item.first, password, item.second)
-                context.startActivity(Intent(context, WaitActivity::class.java))
-            } else {
-                connectWifi(mWifiManager, item.first, "", item.second)
-                context.startActivity(Intent(context, WaitActivity::class.java))
+            if (item.third != -1) {
+                if (item.second != "NO_PASSWORD") showPasswordDialog(context, item.first) {
+                    val password = it.findViewById<EditText>(R.id.password).text.toString()
+                    connectWifi(mWifiManager, item.first, password, item.second)
+                    context.startActivity(Intent(context, WaitActivity::class.java))
+                } else {
+                    connectWifi(mWifiManager, item.first, "", item.second)
+                    context.startActivity(Intent(context, WaitActivity::class.java))
+                }
             }
         }
     }
@@ -74,7 +77,7 @@ class WifiListAdapter(private val mWifiManager: WifiManager?) :
         alertBuilder.setView(v)
         alertBuilder.setCancelable(false)
         alertBuilder.setPositiveButton(android.R.string.ok) { _, _ ->
-            if (et.text.isEmpty()) toast(context, "密码为空")
+            if (et.text.isEmpty()) toast(context, context.getString(R.string.password_none))
             else ok(v)
         }
         alertBuilder.setNegativeButton(android.R.string.cancel, null)

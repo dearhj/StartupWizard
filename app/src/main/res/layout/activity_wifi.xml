@@ -37,14 +37,14 @@
             android:gravity="center"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
-            android:text="连接到WLAN网络"
+            android:text="@string/connect_wifi"
             android:textSize="28sp" />
 
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="选择网络"
+            android:text="@string/choose_wifi"
             android:textSize="20sp" />
 
         <View
@@ -99,7 +99,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="10dp"
-                android:text="返回"
+                android:text="@string/back"
                 android:textColor="#2160E5"
                 android:textSize="15sp"
                 tools:ignore="HardcodedText,RtlSymmetry" />
@@ -119,7 +119,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="10dp"
-                android:text="跳过"
+                android:text="@string/skip"
                 android:textColor="#2160E5"
                 android:textSize="15sp"
                 tools:ignore="HardcodedText,RtlSymmetry" />

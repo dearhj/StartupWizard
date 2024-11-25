@@ -6,6 +6,8 @@ import android.net.wifi.ScanResult
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiManager
 import android.widget.Toast
+import java.io.BufferedReader
+import java.io.InputStreamReader
 
 
 fun getDisplayName(localName: String): String {
@@ -133,7 +135,6 @@ fun connectWifi(wifiManager: WifiManager?, wifiName: String, password: String, t
     if (list != null) {
         for (i in list) {
             if (i.SSID != null && i.SSID == ssid) {
-                wifiManager.disconnect()
                 wifiManager.enableNetwork(i.networkId, true)
                 wifiManager.reconnect()
                 break
@@ -150,5 +151,24 @@ fun forgetNetwork(wifiManager: WifiManager?) {
             wifiManager.removeNetwork(config.networkId)
             wifiManager.saveConfiguration()
         }
+    }
+}
+
+fun canPing(): Boolean {
+    return try {
+        val command = arrayOf("ping", "-c", "1", "-W", "1", "www.baidu.com")
+        val process = Runtime.getRuntime().exec(command)
+        val reader = BufferedReader(InputStreamReader(process.inputStream))
+        val output = StringBuilder()
+        var read: Int
+        val buffer = CharArray(4096)
+        while (reader.read(buffer).also { read = it } > 0) {
+            output.appendRange(buffer, 0, read)
+        }
+        val exitVal = process.waitFor()
+        exitVal == 0
+    } catch (e: Exception) {
+        e.printStackTrace()
+        false
     }
 }

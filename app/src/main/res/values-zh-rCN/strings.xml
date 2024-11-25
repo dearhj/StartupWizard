@@ -4,4 +4,16 @@
     <string name="startButton">开始</string>
     <string name="chooseLanguageTitle">选择您的语言</string>
     <string name="cancel">取消</string>
+    <string name="password_none">密码为空</string>
+    <string name="search_wifi">正在搜索WLAN网络...</string>
+    <string name="no_wifi">无可连接网络</string>
+    <string name="fail_connect_wifi">无法连接网络，请重试</string>
+    <string name="connect_wifi">连接到WLAN网络</string>
+    <string name="choose_wifi">选择网络</string>
+    <string name="back">返回</string>
+    <string name="skip">跳过</string>
+    <string name="wait">请稍等</string>
+    <string name="password">密码</string>
+    <string name="sure">确定</string>
+    <string name="show_password">显示密码</string>
 </resources>

@@ -32,7 +32,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:paddingStart="17dp"
-            android:text="正在搜索WLAN网络..."
+            android:text="@string/search_wifi"
             android:textSize="20sp" />
 
     </LinearLayout>
