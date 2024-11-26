@@ -35,7 +35,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="系统导航"
+            android:text="@string/system_nv"
             android:textSize="28sp" />
 
         <LinearLayout
@@ -90,14 +90,14 @@
                         android:layout_gravity="center_horizontal"
                         android:checked="true"
                         android:gravity="center"
-                        android:text="手势导航"
-                        android:textSize="20sp" />
+                        android:text="@string/system_ge"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
-                        android:text="底部向上滑动进入主屏幕，边缘向另一侧滑动进入上一页" />
+                        android:text="@string/ge_tip" />
 
                 </LinearLayout>
 
@@ -116,14 +116,14 @@
                         android:layout_gravity="center_horizontal"
                         android:checked="false"
                         android:gravity="center"
-                        android:text="三键导航"
-                        android:textSize="20sp" />
+                        android:text="@string/system_bu"
+                        android:textSize="18sp" />
 
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dp"
-                        android:text="使用屏幕底部按钮实现页面切换" />
+                        android:text="@string/bu_tip" />
 
                 </LinearLayout>
 

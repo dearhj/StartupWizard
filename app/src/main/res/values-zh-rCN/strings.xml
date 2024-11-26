@@ -22,4 +22,9 @@
     <string name="time">时间</string>
     <string name="data_time">日期和时间</string>
     <string name="data_time_set">可根据需要进行调整</string>
+    <string name="system_nv">导航模式</string>
+    <string name="system_ge">手势导航</string>
+    <string name="system_bu">三键导航</string>
+    <string name="ge_tip">底部向上滑动进入主屏幕，两侧边缘向另一侧滑动返回上一页</string>
+    <string name="bu_tip">使用屏幕底部按钮实现页面切换</string>
 </resources>

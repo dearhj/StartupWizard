@@ -22,4 +22,9 @@
     <string name="time">시간</string>
     <string name="data_time">날짜 및 시간</string>
     <string name="data_time_set">필요에 따라 조정 가능</string>
+    <string name="system_nv">탐색 모드</string>
+    <string name="system_ge">제스처 탐색</string>
+    <string name="system_bu">3키 탐색</string>
+    <string name="ge_tip">아래쪽은 위쪽으로 슬라이딩하여 메인 화면으로 들어가고, 양쪽 가장자리는 반대쪽으로 슬라이딩하여 이전 페이지로 돌아갑니다.</string>
+    <string name="bu_tip">화면 하단 버튼을 사용하여 페이지 전환</string>
 </resources>

@@ -22,4 +22,9 @@
     <string name="time">Time</string>
     <string name="data_time">Date and Time</string>
     <string name="data_time_set">Adjust if needed</string>
+    <string name="system_nv">Navigation Mode</string>
+    <string name="system_ge">Gesture navigation</string>
+    <string name="system_bu">Three button navigation</string>
+    <string name="ge_tip">Slide up at the bottom to enter the main screen, and slide the edges on both sides to return to the previous page</string>
+    <string name="bu_tip">Use the bottom button on the screen to switch pages</string>
 </resources>

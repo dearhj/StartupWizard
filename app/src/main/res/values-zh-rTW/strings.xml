@@ -22,4 +22,9 @@
     <string name="time">時間</string>
     <string name="data_time">日期和時間</string>
     <string name="data_time_set">可根據需要進行調整</string>
+    <string name="system_nv">導航模式</string>
+    <string name="system_ge">手勢導航</string>
+    <string name="system_bu">三鍵導航</string>
+    <string name="ge_tip">底部向上滑動進入主荧幕，兩側邊緣向另一側滑動返回上一頁</string>
+    <string name="bu_tip">使用荧幕底部按鈕實現頁面切換</string>
 </resources>
