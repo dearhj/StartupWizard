@@ -50,4 +50,5 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation(libs.recyclerView.baseRecyclerViewAdapterHelper)
+    implementation(libs.lottie)
 }
