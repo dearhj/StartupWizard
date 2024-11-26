@@ -2,10 +2,13 @@ package com.android.startupwizard
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.om.IOverlayManager
 import android.net.wifi.ScanResult
 import android.net.wifi.WifiConfiguration
 import android.net.wifi.WifiManager
+import android.os.ServiceManager
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity.OVERLAY_SERVICE
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -170,5 +173,15 @@ fun canPing(): Boolean {
     } catch (e: Exception) {
         e.printStackTrace()
         false
+    }
+}
+
+@SuppressLint("InlinedApi")
+fun handleNavigationOption(mSelection: String) {
+    try {
+        val overlayManager =
+            IOverlayManager.Stub.asInterface(ServiceManager.getService(OVERLAY_SERVICE))
+        overlayManager.setEnabledExclusiveInCategory(mSelection, 0)
+    } catch (_: Exception) {
     }
 }

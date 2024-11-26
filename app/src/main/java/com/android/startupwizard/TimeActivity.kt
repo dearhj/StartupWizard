@@ -2,7 +2,6 @@ package com.android.startupwizard
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.LinearLayout
@@ -43,10 +42,17 @@ class TimeActivity : AppCompatActivity() {
         DateTimeData.timeZoneTitle.observe(this) { timeZoneTitle?.text = it }
         DateTimeData.date.observe(this) { date?.text = it }
         DateTimeData.time.observe(this) { time?.text = it }
+
+        ActivityUtils.addActivity(this)
     }
 
     override fun onResume() {
         super.onResume()
         refreshCurrentState()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityUtils.removeActivity(this)
     }
 }

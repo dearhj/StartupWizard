@@ -34,12 +34,18 @@ class MainActivity : AppCompatActivity() {
         startButton?.setOnClickListener {
             startActivity(Intent(this, WifiActivity::class.java))
         }
+        ActivityUtils.addActivity(this)
     }
 
     override fun onResume() {
         super.onResume()
         currentLanguage = sp?.getString("language", "none") ?: "none"
         chooseLanguage?.text = getDisplayName(currentLanguage)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityUtils.removeActivity(this)
     }
 
 

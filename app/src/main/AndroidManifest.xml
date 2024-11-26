@@ -50,10 +50,14 @@
             android:name=".WaitActivity"
             android:exported="false" />
         <activity
+            android:name=".FinishWaitActivity"
+            android:exported="false" />
+        <activity
             android:name=".TimeActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
+            android:launchMode="singleTask"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -50,6 +50,7 @@ class WifiActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.back).setOnClickListener { finish() }
         progressBar = findViewById(R.id.progress)
         driver = findViewById(R.id.viewDivider)
+        ActivityUtils.addActivity(this)
     }
 
     override fun onResume() {
@@ -64,6 +65,11 @@ class WifiActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         unregisterReceiver(wifiReceiver)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityUtils.removeActivity(this)
     }
 
     private fun registerReceiverWifi() {

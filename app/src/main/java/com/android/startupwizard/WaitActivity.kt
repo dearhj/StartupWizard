@@ -26,6 +26,7 @@ class WaitActivity : AppCompatActivity() {
         enableEdgeToEdge()
         setContentView(R.layout.activity_wait)
         pingOutTimeFlag = false
+        ActivityUtils.addActivity(this)
     }
 
     val handler = Handler(Looper.getMainLooper())
@@ -47,6 +48,11 @@ class WaitActivity : AppCompatActivity() {
         super.onPause()
         unregisterReceiver(wifiReceiver)
         handler.removeCallbacks(runnableNext)
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        ActivityUtils.removeActivity(this)
     }
 
     private fun registerReceiverWifi() {
