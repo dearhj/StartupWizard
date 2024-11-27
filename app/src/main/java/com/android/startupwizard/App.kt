@@ -5,6 +5,7 @@ import android.app.Application
 import android.content.Context
 import android.content.SharedPreferences
 import android.preference.PreferenceManager
+import android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_3BUTTON_OVERLAY
 import android.view.WindowManagerPolicyConstants.NAV_BAR_MODE_GESTURAL_OVERLAY
 
 class App: Application() {
@@ -19,7 +20,8 @@ class App: Application() {
         super.onCreate()
         mContext = this
         sp = PreferenceManager.getDefaultSharedPreferences(this)
-        mSelection = NAV_BAR_MODE_GESTURAL_OVERLAY
+//        mSelection = NAV_BAR_MODE_GESTURAL_OVERLAY
+        mSelection = NAV_BAR_MODE_3BUTTON_OVERLAY
         handleNavigationOption(mSelection) //设置为手势导航
     }
 }

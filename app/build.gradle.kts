@@ -9,7 +9,7 @@ android {
 
     defaultConfig {
         applicationId = "com.android.startupwizard"
-        minSdk = 24
+        minSdk = 32
         targetSdk = 34
         versionCode = 1
         versionName = "1.0"

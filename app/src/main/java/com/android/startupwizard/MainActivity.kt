@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
+        updateStatusBar(1)
         currentLanguage = sp?.getString("language", "none") ?: "none"
         chooseLanguage?.text = getDisplayName(currentLanguage)
     }

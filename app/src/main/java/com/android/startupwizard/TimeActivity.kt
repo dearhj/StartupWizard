@@ -49,6 +49,7 @@ class TimeActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         refreshCurrentState()
+        updateStatusBar(2)
     }
 
     override fun onDestroy() {

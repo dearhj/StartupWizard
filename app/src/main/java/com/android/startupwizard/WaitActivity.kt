@@ -34,13 +34,23 @@ class WaitActivity : AppCompatActivity() {
         finish()
         toast(this@WaitActivity, this@WaitActivity.getString(R.string.fail_connect_wifi))
     }
-    val runnableNext = Runnable { startActivity(Intent(this, TimeActivity::class.java)) }
+
+    val runnableNext = Runnable {
+        startActivityForResult(Intent(this, TimeActivity::class.java), 1)
+    }
+
     val runnablePingOutTime = Runnable { pingOutTimeFlag = true }
 
+    @Deprecated("Deprecated in Java")
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == 1) finish()
+    }
 
     override fun onResume() {
         super.onResume()
         registerReceiverWifi()
+        updateStatusBar(1)
         handler.postDelayed(runnableBack, 20000)
     }
 

@@ -97,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:background="?android:attr/selectableItemBackgroundBorderless"
                 android:clickable="true"
+                android:visibility="gone"
                 android:focusable="true"
                 android:padding="10dp"
                 android:text="@string/back"
@@ -129,7 +130,7 @@
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="0.5"
+            android:layout_weight="0.9"
             android:visibility="invisible" />
     </LinearLayout>
 </FrameLayout>

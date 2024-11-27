@@ -9,6 +9,7 @@ import android.net.wifi.WifiManager
 import android.os.ServiceManager
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity.OVERLAY_SERVICE
+import com.android.startupwizard.App.Companion.mContext
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
@@ -183,5 +184,40 @@ fun handleNavigationOption(mSelection: String) {
             IOverlayManager.Stub.asInterface(ServiceManager.getService(OVERLAY_SERVICE))
         overlayManager.setEnabledExclusiveInCategory(mSelection, 0)
     } catch (_: Exception) {
+    }
+}
+
+
+const val DISABLE_NONE = 0x00000000 //不禁用任何东西
+const val DISABLE_EXPAND = 0x00010000//禁用展开状态栏
+const val DISABLE_NOTIFICATION_ICONS = 0x00020000 //禁用状态栏的通知图标
+const val DISABLE_NOTIFICATION_ALERTS = 0x00040000 //禁用通知提示
+const val DISABLE_NOTIFICATION_TICKER = 0x00080000
+const val DISABLE_SYSTEM_INFO = 0x00100000 //禁用系统信息，包含状态栏右侧的wifi 电池等图标
+const val DISABLE_HOME = 0x00200000 //禁用Home按键，会隐藏按键
+const val DISABLE_RECENT = 0x01000000 //禁用Recent按键，会隐藏按键
+const val DISABLE_BACK = 0x00400000  //禁用Back按键，会隐藏按键
+const val DISABLE_CLOCK = 0x00800000  //禁用状态栏的时间
+const val DISABLE_SEARCH = 0x02000000  //禁用搜索
+const val DISABLE_ONGOING_CALL_CHIP = 0x04000000
+const val STATUS_DISABLE_NAVIGATION = DISABLE_BACK or DISABLE_HOME or DISABLE_RECENT //禁用导航栏
+
+fun updateStatusBar(flag: Int) {
+    var status = DISABLE_NONE
+    if (flag == 1) status = status or STATUS_DISABLE_NAVIGATION or DISABLE_EXPAND
+    else if (flag == 2) status = status or DISABLE_HOME or DISABLE_RECENT or DISABLE_EXPAND
+    setStatusBarInt(mContext!!, status)
+}
+
+
+@SuppressLint("WrongConstant")
+fun setStatusBarInt(context: Context, status: Int) {
+    val service = context.getSystemService("statusbar")
+    try {
+        val statusBarManager = Class.forName("android.app.StatusBarManager")
+        val expand = statusBarManager.getMethod("disable", Int::class.java)
+        expand.invoke(service, status)
+    } catch (e: Exception) {
+        e.printStackTrace()
     }
 }

@@ -65,6 +65,7 @@ class GesturesActivity : AppCompatActivity() {
             }
         }
         ActivityUtils.addActivity(this)
+        mSelection = NAV_BAR_MODE_GESTURAL_OVERLAY
     }
 
     override fun onDestroy() {

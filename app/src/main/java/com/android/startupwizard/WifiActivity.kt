@@ -60,6 +60,7 @@ class WifiActivity : AppCompatActivity() {
         driver?.visibility = View.GONE
         openWifi(mWifiManager)
         startScanWifi(mWifiManager)
+        updateStatusBar(2)
     }
 
     override fun onPause() {
