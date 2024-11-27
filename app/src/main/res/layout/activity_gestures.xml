@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -13,22 +14,17 @@
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="0.9"
-            android:visibility="invisible" />
-
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:contentDescription="@null"
+            android:paddingTop="100dp"
             android:src="@drawable/baseline_gesture" />
 
         <View
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:layout_weight="0.2"
+            android:layout_weight="0.3"
             android:visibility="invisible" />
 
         <TextView
@@ -65,9 +61,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center_vertical"
+            android:orientation="horizontal"
             android:paddingStart="25dp"
-            android:paddingEnd="25dp"
-            android:orientation="horizontal">
+            android:paddingEnd="25dp">
 
             <RadioGroup
                 android:layout_width="match_parent"
@@ -77,10 +73,9 @@
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="65dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:paddingEnd="10dp"
                     android:orientation="vertical">
 
                     <RadioButton
@@ -90,23 +85,17 @@
                         android:layout_gravity="center_horizontal"
                         android:checked="true"
                         android:gravity="center"
+                        android:paddingEnd="10dp"
                         android:text="@string/system_ge"
                         android:textSize="18sp" />
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:text="@string/ge_tip" />
 
                 </LinearLayout>
 
                 <LinearLayout
                     android:layout_width="0dp"
-                    android:layout_height="wrap_content"
+                    android:layout_height="65dp"
                     android:layout_weight="1"
                     android:gravity="center"
-                    android:paddingStart="10dp"
                     android:orientation="vertical">
 
                     <RadioButton
@@ -119,15 +108,33 @@
                         android:text="@string/system_bu"
                         android:textSize="18sp" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:paddingTop="10dp"
-                        android:text="@string/bu_tip" />
-
                 </LinearLayout>
 
             </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingTop="10dp"
+            android:paddingStart="25dp"
+            android:paddingEnd="25dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:text="@string/ge_tip" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:text="@string/bu_tip" />
+
         </LinearLayout>
 
         <View
@@ -142,20 +149,21 @@
             android:layout_height="wrap_content"
             android:paddingStart="25dp"
             android:paddingEnd="25dp"
+            android:paddingBottom="50dp"
             tools:ignore="RtlSymmetry">
 
             <TextView
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:background="@drawable/ripple_effect"
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="10dp"
-                android:visibility="gone"
                 android:text="@string/back"
                 android:textColor="#2160E5"
                 android:textSize="15sp"
+                android:visibility="gone"
                 tools:ignore="HardcodedText,RtlSymmetry" />
 
             <View
@@ -169,7 +177,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
-                android:background="?android:attr/selectableItemBackgroundBorderless"
+                android:background="@drawable/ripple_effect"
                 android:clickable="true"
                 android:focusable="true"
                 android:padding="10dp"
@@ -179,11 +187,5 @@
                 tools:ignore="HardcodedText,RtlSymmetry" />
 
         </LinearLayout>
-
-        <View
-            android:layout_width="0dp"
-            android:layout_height="0dp"
-            android:layout_weight="0.55"
-            android:visibility="invisible" />
     </LinearLayout>
 </FrameLayout>
