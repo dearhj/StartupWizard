@@ -40,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         updateStatusBar(1)
+        window.decorView.systemUiVisibility = 2
         currentLanguage = sp?.getString("language", "none") ?: "none"
         chooseLanguage?.text = getDisplayName(currentLanguage)
     }
