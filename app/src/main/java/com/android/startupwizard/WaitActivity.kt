@@ -57,6 +57,7 @@ class WaitActivity : AppCompatActivity() {
     override fun onPause() {
         super.onPause()
         unregisterReceiver(wifiReceiver)
+        handler.removeCallbacks(runnableBack)
         handler.removeCallbacks(runnableNext)
     }
 

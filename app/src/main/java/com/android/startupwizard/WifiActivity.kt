@@ -47,7 +47,6 @@ class WifiActivity : AppCompatActivity() {
         findViewById<TextView>(R.id.skip).setOnClickListener {
             startActivity(Intent(this, TimeActivity::class.java))
         }
-        findViewById<TextView>(R.id.back).setOnClickListener { finish() }
         progressBar = findViewById(R.id.progress)
         driver = findViewById(R.id.viewDivider)
         ActivityUtils.addActivity(this)

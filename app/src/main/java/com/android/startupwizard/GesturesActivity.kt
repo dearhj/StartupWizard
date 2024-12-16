@@ -15,7 +15,6 @@ import com.android.startupwizard.App.Companion.mSelection
 
 
 class GesturesActivity : AppCompatActivity() {
-    private var back: TextView? = null
     private var next: TextView? = null
     private var radioButtonThree: RadioButton? = null
     private var radioButtonGesture: RadioButton? = null
@@ -32,11 +31,9 @@ class GesturesActivity : AppCompatActivity() {
         gesture = findViewById(R.id.gestural_lottie)
         buttonGesture = findViewById(R.id.button_lottie)
 
-        back = findViewById(R.id.back)
         next = findViewById(R.id.skip)
         next?.text = getString(R.string.set_finish)
         next?.setOnClickListener { startActivity(Intent(this, FinishWaitActivity::class.java)) }
-        back?.setOnClickListener { finish() }
         radioButtonThree?.setOnCheckedChangeListener { _, b ->
             if (b) {
                 radioButtonGesture?.isChecked = false

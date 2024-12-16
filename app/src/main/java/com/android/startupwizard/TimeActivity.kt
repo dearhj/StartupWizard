@@ -16,7 +16,6 @@ class TimeActivity : AppCompatActivity() {
     private var time: TextView? = null
     private var timeZone: TextView? = null
     private var timeZoneTitle: TextView? = null
-    private var back: TextView? = null
     private var next: TextView? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,14 +28,12 @@ class TimeActivity : AppCompatActivity() {
         time = findViewById(R.id.time)
         timeZone = findViewById(R.id.timezone)
         timeZoneTitle = findViewById(R.id.timezone_title)
-        back = findViewById(R.id.back)
         next = findViewById(R.id.skip)
         next?.text = getString(R.string.next)
         dataView?.setOnClickListener { showDatePicker(this) }
         timeView?.setOnClickListener { showTimePicker(this) }
         timeZoneView?.setOnClickListener { showTimeZonePicker(this) }
         next?.setOnClickListener { startActivity(Intent(this, GesturesActivity::class.java)) }
-        back?.setOnClickListener { finish() }
 
         DateTimeData.timeZone.observe(this) { timeZone?.text = it }
         DateTimeData.timeZoneTitle.observe(this) { timeZoneTitle?.text = it }

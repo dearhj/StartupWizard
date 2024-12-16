@@ -11,8 +11,8 @@ android {
         applicationId = "com.android.startupwizard"
         minSdk = 32
         targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
+        versionCode = 12
+        versionName = "1.2"
     }
 
     signingConfigs {
